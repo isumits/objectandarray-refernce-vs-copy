@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS reference VS copy</title>
+    </head>
+    <body>
+        <script>
+            const players=['wes','Sarah','Ryan','Poppy'];
+            const team= players;
+            console.log(players,team);
+            const team2=players.slice();
+            const team3=[].concat(players);
+
+            const team4=[...players];
+            team4[3]='he who';
+            console.log(team4);
+
+            const team5 = Array.from(players);
+
+            const person={
+                name:'sumit',
+                age:2
+            };
+
+            const cap2=Object.assign({},person,{number:99,age:12});
+            console.log(cap2);
+
+            const sumit={
+                name:'sumit',
+                age:5,
+                social:{
+                    twitter:'@sssty',
+                    facebook:'syhh.jjh'
+                }
+            };
+
+            console.clear();
+            console.log(sumit);
+
+            const dev=Object.assign({},sumit);
+            const dev2=JSON.parse(JSON.stringify(sumit));
+        </script>
+    </body>
+</html>
